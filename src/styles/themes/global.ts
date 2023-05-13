@@ -18,6 +18,10 @@ export const GLobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  h1, h2, h3 {
+    font-family: 'Baloo 2', cursive;
+  }
+
   body, input, textarea, button {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;

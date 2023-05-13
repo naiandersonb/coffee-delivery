@@ -21,7 +21,6 @@ export const HeroContent = styled.div`
   margin: 0 auto;
 
   .content h1 {
-    font-family: 'Baloo 2', cursive;
     font-weight: 800;
     font-size: 3rem;
     color: ${(props) => props.theme['base-title']};
@@ -53,12 +52,15 @@ export const Benefits = styled.div<BenefitsProps>`
 
   span {
     background-color: ${(props) => props.bg};
-    width: 2rem;
-    height: 2rem;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     color: ${(props) => props.theme.white};
+  }
+  p {
+    font-size: 0.875rem;
   }
 `
