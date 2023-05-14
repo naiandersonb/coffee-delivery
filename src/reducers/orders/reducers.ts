@@ -23,6 +23,20 @@ export function ordersReducer(state: CoffeeOrders, actions: any) {
           (order) => order.id !== actions.payload.orderId,
         )
       })
+
+    case ActionTypes.UPDATE_QUANTITY: {
+      const orderIndex = state.orders.findIndex(
+        (item) => item.id === actions.payload.orderId,
+      )
+
+      if (orderIndex < 0) {
+        return state
+      }
+
+      return produce(state, (draft) => {
+        draft.orders[orderIndex].quantity = actions.payload.quantity
+      })
+    }
     default:
       return state
   }

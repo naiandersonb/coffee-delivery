@@ -10,9 +10,6 @@ export const ButtonContainer = styled.button<ButtonProps>`
   border-radius: 6px;
   width: 100%;
   border: 1px solid transparent;
-  /* border: 1px solid
-    ${(props) => (props.isSelected ? props.theme.purple : 'transparent')}; */
-
   cursor: pointer;
 
   display: flex;
@@ -22,17 +19,20 @@ export const ButtonContainer = styled.button<ButtonProps>`
   font-size: 0.75rem;
   text-transform: uppercase;
   color: ${(props) => props.theme['base-text']};
+  transition: background-color 0.2s;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &.active {
+    border: 1px solid ${(props) => props.theme.purple};
+  }
 
   span {
     color: ${(props) => props.theme.purple};
   }
-
-  transition: background-color 0.2s;
-
-  /* &:active {
-    border: 1px solid
-      ${(props) => (props.isSelected ? props.theme.purple : 'transparent')};
-  } */
 
   &:hover {
     background-color: ${(props) => props.theme['base-hover']};

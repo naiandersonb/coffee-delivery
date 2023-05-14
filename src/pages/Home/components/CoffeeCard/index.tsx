@@ -1,9 +1,9 @@
 import { ShoppingCartSimple } from 'phosphor-react'
-import { useState } from 'react'
+import { IncrementAndDecrementButton } from '../../../../components/IncrementAndDecrementButton'
 import { useOrdersContext } from '../../../../contexts/OrdersContext'
 import { Coffee } from '../../../../data'
+import { useCounter } from '../../../../hooks/useCounter'
 import { formatCurrency } from '../../../../utils/formatCurrency'
-import { IncrementAndDecrementButton } from './IncrementAndDecrementButton'
 import {
   AddToCartButton,
   CoffeeCardContainer,
@@ -20,21 +20,13 @@ interface CoffeeCardProps {
 export function CoffeeCard({ coffee }: CoffeeCardProps) {
   const { addNewItem } = useOrdersContext()
 
-  const [count, setCount] = useState(1)
-
-  const handleIncrement = () => {
-    setCount((state) => state + 1)
-  }
-  const handleDecrement = () => {
-    if (count === 1) return
-    setCount((state) => state - 1)
-  }
+  const { count, handleDecrement, handleIncrement, resetCounter } = useCounter()
 
   const price = formatCurrency(coffee.price)
 
   function handleAddNewItem() {
     addNewItem(coffee, count)
-    setCount(1)
+    resetCounter()
   }
 
   return (

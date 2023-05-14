@@ -3,6 +3,7 @@ import { Coffee } from '../data'
 import {
   addNewOrderAction,
   removeOrderAction,
+  updateQuantityAction,
 } from '../reducers/orders/actions'
 import { ordersReducer } from '../reducers/orders/reducers'
 
@@ -11,6 +12,7 @@ interface OrdersContextProviderProps {
 }
 
 interface OrdersContextProps {
+  updateQuantity: (orderId: string, quantity: number) => void
   addNewItem: (order: Coffee, quantity: number) => void
   removeItemToListOrder: (orderId: string) => void
   orders: Coffee[]
@@ -36,9 +38,19 @@ export function OrdersContextProvider({
     dispatch(removeOrderAction(orderId))
   }
 
+  const updateQuantity = (orderId: string, quantity: number) => {
+    dispatch(updateQuantityAction(orderId, quantity))
+  }
+
   return (
     <OrdersContext.Provider
-      value={{ addNewItem, orders, removeItemToListOrder, totalOrders }}
+      value={{
+        addNewItem,
+        orders,
+        removeItemToListOrder,
+        totalOrders,
+        updateQuantity,
+      }}
     >
       {children}
     </OrdersContext.Provider>

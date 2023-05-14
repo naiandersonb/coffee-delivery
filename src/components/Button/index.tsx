@@ -16,7 +16,7 @@ export function Button({
 }: ButtonProps) {
   return (
     <ButtonContainer
-      isSelected={isSelected}
+      className={isSelected ? 'active' : ''}
       onClick={handleClick}
       type="button"
     >

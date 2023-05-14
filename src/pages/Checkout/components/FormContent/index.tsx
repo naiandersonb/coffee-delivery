@@ -10,16 +10,16 @@ export function FormContent() {
     <FormContentContainer>
       <Input
         type="text"
+        className="zipCode"
         placeholder="CEP"
-        maxWidth="33%"
         {...register('zipCode')}
       />
-      <Input type="text" placeholder="Rua" {...register} />
+      <Input type="text" placeholder="Rua" {...register('street')} />
       <div className="number-and-complement">
         <Input
           type="text"
           placeholder="Número"
-          maxWidth="33%"
+          className="houseNumber"
           {...register('houseNumber')}
         />
 
@@ -38,7 +38,7 @@ export function FormContent() {
         <Input
           type="text"
           placeholder="UF"
-          maxWidth="15%"
+          className="uf"
           {...register('uf')}
         />
       </div>
