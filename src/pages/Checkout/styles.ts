@@ -17,6 +17,7 @@ export const CheckoutContainer = styled.div`
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
     align-items: center;
+    padding: 2rem 1rem;
   }
 `
 

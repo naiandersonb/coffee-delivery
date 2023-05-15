@@ -5,11 +5,21 @@ export const SuccessContainer = styled.main`
   max-width: 1126px;
   margin: 0 auto;
   min-height: 50vh;
+  padding: 1rem;
 
   display: flex;
   align-items: flex-end;
   gap: 2rem;
   justify-content: space-between;
+
+  @media (max-width: 960px) {
+    flex-direction: column-reverse;
+    align-items: center;
+
+    img {
+      max-width: 80%;
+    }
+  }
 `
 export const DeliveryInfo = styled.div`
   width: 50%;
@@ -19,6 +29,10 @@ export const DeliveryInfo = styled.div`
 
   .subtitle {
     color: ${(props) => props.theme['base-text']};
+  }
+
+  @media (max-width: 960px) {
+    width: 100%;
   }
 `
 

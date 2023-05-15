@@ -33,12 +33,31 @@ export const HeroContent = styled.div`
     font-size: 1.2em;
     line-height: 130%;
   }
+
+  @media (max-width: 990px) {
+    flex-direction: column-reverse;
+
+    .content h1 {
+      font-size: 2rem;
+    }
+
+    .content p {
+      font-size: 1rem;
+    }
+    img {
+      max-width: 80%;
+    }
+  }
 `
 
 export const BenefitsContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 3rem;
+
+  @media (max-width: 990px) {
+    grid-template-columns: 1fr;
+  }
 `
 interface BenefitsProps {
   bg: string
@@ -49,6 +68,10 @@ export const Benefits = styled.div<BenefitsProps>`
   padding: 0.8rem 0;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: 990px) {
+    padding: 0.4rem 0;
+  }
 
   span {
     background-color: ${(props) => props.bg};

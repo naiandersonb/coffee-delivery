@@ -7,7 +7,7 @@ export const SummaryContainer = styled.div`
   border-radius: 6px 44px 6px 44px;
 
   @media (max-width: 1072px) {
-    padding: 2rem;
+    padding: 1.2rem;
   }
 `
 
