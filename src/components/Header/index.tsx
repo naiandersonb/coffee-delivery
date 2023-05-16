@@ -2,6 +2,7 @@ import { MapPin, ShoppingCartSimple } from 'phosphor-react'
 import { NavLink } from 'react-router-dom'
 import logoCoffeeDelivery from '../../assets/images/coffee-logo.svg'
 import { useOrdersContext } from '../../contexts/OrdersContext'
+import { useGeolocation } from '../../hooks/useGeolocation'
 import {
   Box,
   HeaderContainer,
@@ -13,6 +14,7 @@ import {
 
 export function Header() {
   const { totalOrders } = useOrdersContext()
+  const { currentLocation } = useGeolocation()
 
   return (
     <Box>
@@ -22,10 +24,12 @@ export function Header() {
         </NavLink>
 
         <HeaderItems>
-          <LocationBadge>
-            <MapPin size={20} weight="fill" />
-            Caxias, MA
-          </LocationBadge>
+          {currentLocation && (
+            <LocationBadge>
+              <MapPin size={20} weight="fill" />
+              {currentLocation.city}, {currentLocation.uf}
+            </LocationBadge>
+          )}
 
           <NavLink to="/checkout" title="Checkout">
             <ShoppingCartButton type="button">

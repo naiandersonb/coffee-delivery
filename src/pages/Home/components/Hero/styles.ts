@@ -6,7 +6,7 @@ export const HeroContainer = styled.main`
   align-items: center;
   gap: 2rem;
   padding: 5rem 1rem;
-  min-height: 70vh;
+  min-height: 80vh;
 
   background-image: url(${backgroundImage});
   background-repeat: no-repeat;
