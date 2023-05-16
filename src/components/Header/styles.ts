@@ -1,11 +1,21 @@
 import { styled } from 'styled-components'
 
+export const Box = styled.header`
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3.5px);
+`
+
 export const HeaderContainer = styled.header`
   width: 100%;
   max-width: 1126px;
 
   margin: auto;
-  padding: 1rem;
 
   display: flex;
   align-items: center;

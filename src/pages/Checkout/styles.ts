@@ -5,6 +5,7 @@ export const CheckoutContainer = styled.div`
   max-width: 1126px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  margin-top: 100px;
 
   display: grid;
   grid-template-columns: 55% 1fr;

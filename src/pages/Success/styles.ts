@@ -3,12 +3,12 @@ import { styled } from 'styled-components'
 export const SuccessContainer = styled.main`
   width: 100%;
   max-width: 1126px;
-  margin: 0 auto;
-  min-height: 50vh;
+  margin: 100px auto;
+  min-height: 70vh;
   padding: 1rem;
 
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 2rem;
   justify-content: space-between;
 
